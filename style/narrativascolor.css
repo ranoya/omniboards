@@ -1,0 +1,41 @@
+:root {
+  --ranoyav2-bg: #fc18d7;
+  --ranoyav2-detalhelite: #c5e4f3;
+  --ranoyav2-stranger: #2dfdde;
+  --ranoyav2-strangerpalid: #f8ebda;
+  --ranoyav2-strangerdarker: #1ba597;
+  --ranoyav2-greydetails: #cfcfcf;
+  --ranoyav2-detalhes: #9f2440;
+  --ranoyav2-detalhes3: #b2a4a8;
+  --ranoyav2-detalhes2: #d88297;
+  --ranoyav2-detalhelite: #f47575;
+  --ranoyav2-alfalite: #f4757522;
+  /* --ranoyav2-invert: #fbe1e1; */
+  --ranoyav2-invert: #9f2440;
+  --ranoyav2-texto: #776378;
+  --ranoyav2-big: #ffffff;
+  --palco-c1: #256f85;
+  --palco-c2: #831547;
+  --palco-c1: #afb9bb;
+  --palco-c2: #e38e16;
+}
+
+#palco {
+  background-image: none;
+  background-color: #fef6e4;
+  box-shadow: 0 6px 4px -10px #00000003;
+}
+
+#infomenu {
+  background-image: url(https://www.ranoya.com/Assets/ranoyav2/infomenublack.svg);
+}
+
+h3 {
+  box-shadow: 0px 18px 18px -20px #00000022;
+}
+
+.logosintese .logoovercolor,
+.logoextenso .logoovercolor {
+  fill: #ccc5b7 !important;
+  transition: fill 0.4s ease-in;
+}
