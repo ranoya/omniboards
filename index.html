@@ -115,7 +115,7 @@
             sbtit = $_GET["subtitulo"];
           }
           document.getElementById("sbtitlo").innerHTML =
-            sbtit.fromHtmlEntities();
+            String.fromHtmlEntities(sbtit);
         </script>
       </div>
 
@@ -165,7 +165,7 @@
               actit = $_GET["titulo"];
             }
             document.getElementById("mtitulo").innerHTML =
-              actit.fromHtmlEntities();
+              String.fromHtmlEntities(actit);
           </script>
 
           <input type="hidden" id="masterfilter" />
