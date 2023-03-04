@@ -220,7 +220,7 @@ menutoggle = function () {
 document.addEventListener("keydown", function (event) {
             // console.log(event.keyCode);
     
-            if (event.keyCode == 191) {
+            if (event.keyCode == 191 || event.keyCode == 13) {
               menutoggle();
             } else {
 
