@@ -1,0 +1,35 @@
+:root {
+  --ranoyav2-bg: #a59b04;
+  --ranoyav2-big: #ffffff;
+
+  --ranoyav2-detalhelite: #c5e4f3;
+  --ranoyav2-stranger: #2dfdde;
+  --ranoyav2-strangerpalid: #f8ebda;
+  --ranoyav2-strangerdarker: #1ba597;
+  --ranoyav2-greydetails: #cfcfcf;
+  --ranoyav2-detalhes: #9f2440;
+  --ranoyav2-detalhes3: #b2a4a8;
+  --ranoyav2-detalhes2: #d88297;
+  --ranoyav2-detalhelite: #f47575;
+  --ranoyav2-alfalite: #f4757522;
+
+  --ranoyav2-invert: #9f2440;
+  --ranoyav2-texto: #776378;
+
+  --palco-c1: #256f85;
+  --palco-c2: #831547;
+  --palco-c1: #afb9bb;
+  --palco-c2: #e38e16;
+
+  /* 
+  omnidocs
+  --bg-color: #7d7837;
+  --line-separator: #68641c;
+  --text-color: #611a52;
+  --color-link: #ffffff;
+  --color-hover: #5e0c3a;
+  --input-text: #ffffff;
+  --scroll-track: #7d7837;
+  --color-shadow: #00000055;
+  */
+}
