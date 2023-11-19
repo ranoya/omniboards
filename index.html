@@ -321,25 +321,25 @@
 
                 if (randomiza) {
                   for (let i = 0; i < ordena.length; i++) {
-                    myhtml += `<a target='_blank' href='${
+                    myhtml += `<a target='_blank' fundo='${imagefromallsources(
                       arr[ordena[i]].imagemurl
-                    }' class='imagemquadrada'
-                            style='background-image: url(${imagefromallsources(
-                              arr[ordena[i]].imagemurl
-                            )});'></a>`;
+                    )}' href='${
+                      arr[ordena[i]].imagemurl
+                    }' class='imagemquadrada'></a>`;
                   }
                 } else {
                   for (let i = 0; i < tamanho; i++) {
-                    myhtml += `<a target='_blank' href='${
+                    myhtml += `<a target='_blank' fundo='${imagefromallsources(
                       arr[i].imagemurl
-                    }' class='imagemquadrada'
-                            style='background-image: url(${imagefromallsources(
-                              arr[i].imagemurl
-                            )});'></a>`;
+                    )}' href='${arr[i].imagemurl}' class='imagemquadrada'></a>`;
                   }
                 }
 
                 document.getElementById("conteudogrid").innerHTML = myhtml;
+
+                jafoi = [];
+                objetos = document.getElementsByClassName("imagemquadrada");
+                carregacoisas();
               }, 500);
             };
 
@@ -357,6 +357,23 @@
                 mudamenu();
               }, 700);
             }
+
+            let jafoi = [];
+            let objetos = document.getElementsByClassName("imagemquadrada");
+
+            let carregacoisas = function () {
+              for (let i = 0; i < objetos.length; i++) {
+                if (
+                  jafoi[i] != true &&
+                  objetos[i].getBoundingClientRect().top <= window.innerHeight
+                ) {
+                  objetos[i].style.backgroundImage = `url(${objetos[
+                    i
+                  ].getAttribute("fundo")})`;
+                  jafoi[i] = true;
+                }
+              }
+            };
           </script>
 
           <!-- FIM DO CONTEÚDO ---------------------------------------- -->
@@ -459,6 +476,15 @@
           document.getElementById("resultadosdepesquisa").style.display =
             "none";
         }
+      </script>
+
+      <script>
+        document.getElementById("superbody").onscroll = function (e) {
+          ajustalogos();
+          carregacoisas();
+        };
+
+        window.addEventListener("resize", carregacoisas);
       </script>
     </div>
   </body>
