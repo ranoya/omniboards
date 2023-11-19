@@ -1130,9 +1130,11 @@ nav #resultadosdepesquisa a:hover {
 
 .imagemquadrada:hover {
   border: 1px solid var(--ranoyav2-stranger, #16e3c4);
-  margin: 0;
-  padding: 4px;
   transition: all 0.3s ease-in;
+  transform: matrix(1, 0, 0, 1, 5, -7);
+  -ms-transform: matrix(1, 0, 0, 1, 5, -7);
+  -webkit-transform: matrix(1, 0, 0, 1, 5, -7);
+  box-shadow: -10px 10px var(--ranoyav2-invert, #9f2440);
 }
 
 .imagemaurea {
