@@ -34,8 +34,9 @@ A planilha utilizada na versão de produção é [esta aqui](https://docs.google
 
 Apenas duas colunas precisam constar obrigatoriamente nela:
 
-| titulo | nome do registro |
-| imagemurl | endereço url da imagem ou vídeo |
+| titulo | imagemurl |
+|--------|-----------|
+| nome do registro  | endereço url da imagem ou vídeo |
 
 Quaisquer outros campos adicionados nela serão utilizados pelo motor de filtragem para localizar/filtrar os registros.
 
