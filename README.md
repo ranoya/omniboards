@@ -19,7 +19,7 @@ Um exemplo de modificação pode ser visto por esta URL:
 
 [https://omniboards.vercel.app/?titulo=pixelart&subtitulo=subtitulos&contentonly=true&filtra=pixelart](https://omniboards.vercel.app/?titulo=pixelart&subtitulo=subtitulos&contentonly=true&filtra=pixelart)
 
-A planilha que alimenta o painél pode ser modificada na linha 264 do `index.html`:
+A planilha que alimenta o painel pode ser modificada na linha 264 do `index.html`:
 
 ```js
 getpinboard(
