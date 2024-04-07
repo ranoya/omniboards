@@ -158,31 +158,31 @@
 
           <script>
             let defaultmenu = `
-        <option value="https://opensheet.elk.sh/1MUr_AiAYBa184e5ZOUO9jQGD-HvU3rQlOvu0oMAj7fw/Menu_Inspira">Inspiração</option>
+                            <option value="https://docs.google.com/spreadsheets/d/1MUr_AiAYBa184e5ZOUO9jQGD-HvU3rQlOvu0oMAj7fw/edit#gid=1639607603">Inspiração</option>
 
-        <option value="https://opensheet.elk.sh/1MUr_AiAYBa184e5ZOUO9jQGD-HvU3rQlOvu0oMAj7fw/Menu_Arte">
-            Arte
-        </option>
+                            <option value="https://docs.google.com/spreadsheets/d/1MUr_AiAYBa184e5ZOUO9jQGD-HvU3rQlOvu0oMAj7fw/edit#gid=1040411788">
+                                Arte
+                            </option>
 
-        <option value="https://opensheet.elk.sh/1MUr_AiAYBa184e5ZOUO9jQGD-HvU3rQlOvu0oMAj7fw/Menu_Exoticos">
-            Projetos Exóticos
-        </option>
+                            <option value="https://docs.google.com/spreadsheets/d/1MUr_AiAYBa184e5ZOUO9jQGD-HvU3rQlOvu0oMAj7fw/edit#gid=257476315">
+                                Projetos Exóticos
+                            </option>
 
-        <option value="https://opensheet.elk.sh/1MUr_AiAYBa184e5ZOUO9jQGD-HvU3rQlOvu0oMAj7fw/Menu_Linguagens">
-            Linguagens
-        </option>
+                            <option value="https://docs.google.com/spreadsheets/d/1MUr_AiAYBa184e5ZOUO9jQGD-HvU3rQlOvu0oMAj7fw/edit#gid=835245499">
+                                Linguagens
+                            </option>
 
-        <option value="https://opensheet.elk.sh/1MUr_AiAYBa184e5ZOUO9jQGD-HvU3rQlOvu0oMAj7fw/Menu_SyFy">
-            Sci-Fi
-        </option>
+                            <option value="https://docs.google.com/spreadsheets/d/1MUr_AiAYBa184e5ZOUO9jQGD-HvU3rQlOvu0oMAj7fw/edit#gid=933231796">
+                                Sci-Fi
+                            </option>
 
-        <option value="https://opensheet.elk.sh/1MUr_AiAYBa184e5ZOUO9jQGD-HvU3rQlOvu0oMAj7fw/Menu_Tematicos">
-            Temáticos
-        </option>
+                            <option value="https://docs.google.com/spreadsheets/d/1MUr_AiAYBa184e5ZOUO9jQGD-HvU3rQlOvu0oMAj7fw/edit#gid=891014764">
+                                Temáticos
+                            </option>
 
-        <option value="https://opensheet.elk.sh/1MUr_AiAYBa184e5ZOUO9jQGD-HvU3rQlOvu0oMAj7fw/Menu_Consumo">
-            Consumismo
-        </option>`;
+                            <option value="https://docs.google.com/spreadsheets/d/1MUr_AiAYBa184e5ZOUO9jQGD-HvU3rQlOvu0oMAj7fw/edit#gid=136486909">
+                                Consumismo
+                            </option>`;
 
             if (
               typeof $_GET["contentonly"] != "undefined" &&
@@ -205,12 +205,79 @@
             let omdados = [];
             let getpinboard = function (arquivojson, el_id) {
               // Fetch JSON file
-              fetch(arquivojson)
+              fetch(GoogleSheetCsvURL(arquivojson))
                 .then((response) => response.json())
                 .then((omdados) => {
+                  let total = omdados.length;
+                  let changecsv = "";
+                  let quantquotes = 0;
+                  for (let r = 0; r < total; r++) {
+                    if (omdados.substring(r, r + 1) == '"') {
+                      quantquotes++;
+                    }
+
+                    if (
+                      omdados.substring(r, r + 1) == "\n" &&
+                      quantquotes % 2 != 0
+                    ) {
+                      changecsv =
+                        omdados.substring(0, r) +
+                        " " +
+                        omdados.substring(r + 1);
+                      omdados = changecsv;
+                    }
+                  }
+
+                  let linhas = omdados.split(/\r?\n|\r|\n/g);
+                  let linhadados = "";
+                  let valorfinal = "";
+                  let temp1 = "";
+                  let temp2 = "";
+
+                  let heads = linhas[0].split(",");
+
+                  let arr = [];
+
+                  for (let i = 1; i < linhas.length; i++) {
+                    arr[i - 1] = {};
+                    linhadados = linhas[i].split(
+                      /[,]{1}(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))/
+                    );
+
+                    for (let k = 0; k < linhadados.length; k++) {
+                      linhadados[k].trim();
+
+                      if (linhadados[k].substring(0, 1) == '"') {
+                        temp1 = linhadados[k].substring(
+                          1,
+                          linhadados[k].length
+                        );
+                      } else {
+                        temp1 = linhadados[k];
+                      }
+
+                      if (
+                        temp1.substring(temp1.length - 2, temp1.length) == '"'
+                      ) {
+                        temp1 = temp1.substring(0, temp1.length - 2);
+                      }
+
+                      if (
+                        temp1.substring(temp1.length - 1, temp1.length) == '"'
+                      ) {
+                        temp2 = temp1.substring(0, temp1.length - 1);
+                      } else {
+                        temp2 = temp1;
+                      }
+
+                      valorfinal = temp2.replace(/""/g, '"');
+
+                      arr[i - 1][heads[k]] = valorfinal;
+                    }
+                  }
                   //Start Omnifilter Event Listener Function
-                  startpinfilter(omdados, el_id, processadados);
-                  startpinfilter(omdados, "selectfilter", processadados);
+                  startpinfilter(arr, el_id, processadados);
+                  startpinfilter(arr, "selectfilter", processadados);
                 });
             };
 
@@ -262,7 +329,7 @@
             };
 
             getpinboard(
-              "https://opensheet.elk.sh/1MUr_AiAYBa184e5ZOUO9jQGD-HvU3rQlOvu0oMAj7fw/Simples",
+              "https://docs.google.com/spreadsheets/d/1MUr_AiAYBa184e5ZOUO9jQGD-HvU3rQlOvu0oMAj7fw/edit#gid=1358034191",
               "entradapesquisa"
             );
 
