@@ -205,6 +205,9 @@
             let omdados = [];
             let getpinboard = function (arquivojson, el_id) {
               // Fetch JSON file
+
+              console.log(GoogleSheetCsvURL(arquivojson));
+
               fetch(GoogleSheetCsvURL(arquivojson))
                 .then((response) => response.json())
                 .then((omdados) => {
@@ -273,6 +276,8 @@
                       valorfinal = temp2.replace(/""/g, '"');
 
                       arr[i - 1][heads[k]] = valorfinal;
+
+                      console.table(arr);
                     }
                   }
                   //Start Omnifilter Event Listener Function
