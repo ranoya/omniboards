@@ -477,39 +477,37 @@
           let pelaprimeira = true;
 
           let menu = function (arquivojson) {
-            fetch(GoogleSheetCsvURL(arquivojson))
-              .then((response) => response.json())
-              .then((dados) => {
-                let meuhtml = `<a href='javascript: popfiltro("");'>Tudo</a>`;
+            getcsvdata(GoogleSheetCsvURL(arquivojson), function (dados) {
+              let meuhtml = `<a href='javascript: popfiltro("");'>Tudo</a>`;
 
-                if (
-                  $_GET["menu"] != "" &&
+              if (
+                $_GET["menu"] != "" &&
+                typeof $_GET["menu"] != "undefined" &&
+                $_GET["menu"] != null
+              ) {
+                meuhtml = "";
+              }
+
+              for (i = 0; i < dados.length; i++) {
+                meuhtml += `<a href='javascript:popfiltro("${dados[i].Filtro}");'>${dados[i].Label}</a>`;
+              }
+
+              document.getElementById("resultadosdepesquisa").innerHTML =
+                meuhtml;
+
+              if (
+                pelaprimeira == false ||
+                ($_GET["menu"] != "" &&
                   typeof $_GET["menu"] != "undefined" &&
-                  $_GET["menu"] != null
-                ) {
-                  meuhtml = "";
-                }
+                  $_GET["menu"] != null)
+              ) {
+                const carregacerto = setTimeout(function () {
+                  popfiltro(dados[0].Filtro, 1);
+                }, 1000);
+              }
 
-                for (i = 0; i < dados.length; i++) {
-                  meuhtml += `<a href='javascript:popfiltro("${dados[i].Filtro}");'>${dados[i].Label}</a>`;
-                }
-
-                document.getElementById("resultadosdepesquisa").innerHTML =
-                  meuhtml;
-
-                if (
-                  pelaprimeira == false ||
-                  ($_GET["menu"] != "" &&
-                    typeof $_GET["menu"] != "undefined" &&
-                    $_GET["menu"] != null)
-                ) {
-                  const carregacerto = setTimeout(function () {
-                    popfiltro(dados[0].Filtro, 1);
-                  }, 1000);
-                }
-
-                pelaprimeira = false;
-              });
+              pelaprimeira = false;
+            });
           };
 
           let mudamenu = function () {
