@@ -477,7 +477,7 @@
           let pelaprimeira = true;
 
           let menu = function (arquivojson) {
-            fetch(arquivojson)
+            fetch(GoogleSheetCsvURL(arquivojson))
               .then((response) => response.json())
               .then((dados) => {
                 let meuhtml = `<a href='javascript: popfiltro("");'>Tudo</a>`;
