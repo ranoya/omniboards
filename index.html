@@ -459,6 +459,8 @@
         </div>
       </div>
 
+      <div id="altrodape"></div>
+
       <!-- MENU DE NAVEGAÇÃO ------------------------------------------------------ -->
 
       <nav>
@@ -556,6 +558,54 @@
         };
 
         window.addEventListener("resize", carregacoisas);
+      </script>
+
+      <script>
+        if (
+          typeof $_GET["nomenu"] != "undefined" &&
+          $_GET["nomenu"] != null &&
+          $_GET["nomenu"] != ""
+        ) {
+          document.getElementsByClassName("signature")[0].style.display =
+            "none";
+          document.getElementsByClassName("corvo")[0].style.display = "none";
+          document.getElementsByTagName("nav")[0].style.display = "none";
+
+          document.getElementById("menubutton").style.display = "none";
+          document.getElementById("rodape").style.display = "none";
+          document.getElementById("cabecalho").style.display = "none";
+
+          if (
+            typeof $_GET["blink"] != "undefined" &&
+            $_GET["blink"] != null &&
+            $_GET["blink"] != ""
+          ) {
+            document.getElementById("altrodape").style.display = "block";
+            document.getElementById("altrodape").style.position = "fixed";
+            document.getElementById("altrodape").style.right = 0;
+            document.getElementById("altrodape").style.bottom = 0;
+            document.getElementById("altrodape").style.width =
+              "calc(100% - 60px)";
+            document.getElementById("altrodape").style.backgroundColor =
+              "var(--ranoyav2-bg)";
+            document.getElementById("altrodape").style.color =
+              "var(--ranoyav2-texto)";
+            document.getElementById("altrodape").style.fontSize = "14px";
+            document.getElementById("altrodape").style.lineHeight = "24px";
+            document.getElementById("altrodape").style.padding = "10px";
+            document.getElementById("altrodape").style.paddingRight = "30px";
+            document.getElementById("altrodape").style.paddingLeft = "30px";
+            document.getElementById("altrodape").style.textAlign = "right";
+            document.getElementById("altrodape").style.fontWeight = "bold";
+            document.getElementById("altrodape").style.zIndex = 50000;
+
+            document.getElementById("altrodape").style.height = "34px";
+            document.getElementById("altrodape").innerHTML =
+              `<span style='margin-right: 105px; padding-top: 7px; display: block;'>` +
+              decodeURI($_GET["blink"]) +
+              `</span>`;
+          }
+        }
       </script>
     </div>
   </body>
