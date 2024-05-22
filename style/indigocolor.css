@@ -1,0 +1,113 @@
+:root {
+  --ranoyav2-bg: #361e73;
+  --ranoyav2-stranger: #b7b7b7;
+  --ranoyav2-strangerpalid: #4ac0b3;
+  --ranoyav2-strangerdarker: #808080;
+  --ranoyav2-greydetails: #c8d4e0;
+
+  --ranoyav2-detalhes: #4b6366;
+  --ranoyav2-detalhes3: #889186;
+  --ranoyav2-detalhes2: #a2aeaf;
+  --ranoyav2-detalhelite: #8b8b8b;
+  --ranoyav2-alfalite: #75f4df22;
+  --ranoyav2-invert: #e6e5e5;
+
+  --ranoyav2-texto: #c0c0c0;
+
+  --ranoyav2-big: #ffffff;
+
+  --palco-c1: #aed5d5;
+  --palco-c2: #f6dfff;
+
+  --ranoyav2-indiceredux: #aed5d5;
+  --ranoyav2-indicereduxshadow: #aed5d536;
+
+  --logo-rodape: #e1e6eb;
+  --ranoyav2-ancoras: #ced0d566;
+
+  --ranoyav2-cardbg: #ffffff;
+
+  --timeline-text-color: #ffa312;
+  --timeline-text-over: #3fe1cb;
+  --base-background: #f8f9fa;
+
+  --meta-margins: 30px;
+  --track-height: 35px;
+
+  --bg-color: #f8f9fa !important;
+  --line-separator: #e4e4e4 !important;
+  --text-color: #ffa312 !important;
+  --color-link: #b6b8bd !important;
+  --color-hover: #4ac0b3 !important;
+  --input-text: #ffaa46 !important;
+  --scroll-track: #a2aeaf00 !important;
+  --color-shadow: #f6dfff44 !important;
+}
+
+#palco {
+  background-image: none;
+  background-color: #f8f9fa;
+  box-shadow: 0 6px 4px -10px #00000003;
+  background: linear-gradient(
+    180deg,
+    rgb(117 190 210) 0%,
+    rgb(204 240 188) 32%,
+    #f8f9fa 100%
+  );
+}
+
+@media screen and (min-width: 1px) {
+  h1 {
+    transform: none !important;
+    font-family: "Lora", serif !important;
+    font-size: 2.4rem !important;
+
+    text-align: left !important;
+
+    transition: all 0s ease-in !important;
+    line-height: 3rem !important;
+    background-image: none !important;
+    margin-top: 15px;
+  }
+
+  h3 {
+    top: 0 !important;
+  }
+}
+
+#infomenu {
+  background-image: url(https://www.ranoya.com/Assets/ranoyav2/infomenublack.svg);
+}
+
+h3 {
+  box-shadow: 0px 18px 18px -20px #00000022;
+}
+
+.logosintese .logoovercolor,
+.logoextenso .logoovercolor {
+  fill: #ffffff !important;
+  transition: fill 0.4s ease-in;
+}
+
+.track {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
+#entrada {
+  height: 50px;
+  font-family: "Lora", serif;
+  font-size: 28px !important;
+  background-color: var(--ranoyav2-indicereduxshadow);
+  margin-bottom: 20px;
+}
+
+.gridhead {
+  display: none;
+}
+
+#outputs {
+  height: calc(100vh - 116px);
+  font-family: "Lora", serif;
+}
