@@ -185,9 +185,12 @@ menutoggle = function () {
 
 document.addEventListener("keydown", function (event) {
   if (
-    typeof $_GET["nomenu"] == "undefined" ||
-    $_GET["nomenu"] == null ||
-    $_GET["nomenu"] == ""
+    (typeof $_GET["nomenu"] == "undefined" ||
+      $_GET["nomenu"] == null ||
+      $_GET["nomenu"] == "") &&
+    (typeof $_GET["contentonly"] == "undefined" ||
+      $_GET["contentonly"] == null ||
+      $_GET["contentonly"] == "")
   ) {
     // console.log(event.keyCode);
 
