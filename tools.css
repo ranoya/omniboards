@@ -54,8 +54,23 @@ h6 {
   background-color: var(--palco-c1, #afb9bb);
 }
 
-h1,
-h1 .marker {
+::-webkit-scrollbar:hover {
+  background-color: var(--palco-c1, #afb9bb);
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  background-color: var(--ranoyav2-big, #f6348b);
+}
+
+::-webkit-scrollbar-thumb:vertical:hover {
+  background-color: var(--ranoyav2-big, #f6348b);
+}
+
+::-webkit-scrollbar-thumb:vertical:active {
+  background-color: var(--ranoyav2-big, #f6348b);
+}
+
+h1 {
   /* color: #34f7dd; */
   color: var(--ranoyav2-big, #f6348b);
   margin-top: 10rem;
@@ -73,6 +88,13 @@ h1 .marker {
 
   transform-origin: right bottom;
   transform: rotate(-2.5deg);
+}
+
+h1 .marker {
+  color: var(--ranoyav2-big, #f6348b);
+  margin-top: 10rem;
+  font-family: "Covered By Your Grace", cursive;
+  font-style: normal !important;
 }
 
 @media screen and (min-width: 800px) {
