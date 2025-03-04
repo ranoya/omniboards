@@ -49,6 +49,11 @@ h6 {
   font-family: "Lora", serif;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: var(--palco-c1, #afb9bb);
+}
+
 h1 {
   /* color: #34f7dd; */
   color: var(--ranoyav2-big, #f6348b);
