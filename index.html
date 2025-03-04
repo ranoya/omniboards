@@ -219,7 +219,8 @@
             ) {
               actit = $_GET["titulo"];
             }
-            document.getElementById("mtitulo").innerHTML = decodeURI(actit);
+            document.getElementById("mtitulo").innerHTML =
+              "<span class='marker'>" + decodeURI(actit) + "</span>";
           </script>
 
           <input type="hidden" id="masterfilter" />

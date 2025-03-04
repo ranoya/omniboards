@@ -54,7 +54,8 @@ h6 {
   background-color: var(--palco-c1, #afb9bb);
 }
 
-h1 {
+h1,
+h1 .marker {
   /* color: #34f7dd; */
   color: var(--ranoyav2-big, #f6348b);
   margin-top: 10rem;
