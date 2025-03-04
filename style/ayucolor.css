@@ -36,6 +36,7 @@
 
 .marker {
   box-shadow: inset 0px -100px #ffaa4688;
+  padding-left: 30px;
 }
 
 #palco {
