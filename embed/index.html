@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+
+<!--
+
+
+    filtra=  -> termos de filtragem base
+    limita= -> número máximo de itens exibidos (aleatórios)
+    bg= -> cor de fundo (hexadecimal)
+    fg= -> cor de frente (hexadecimal)
+    hl= -> cor de destaque (hexadecimal)
+
+
+-->
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="generator" content="artesanal" />
+    <meta
+      name="keywords"
+      content="Design da informação, experiência, visualização, dataviz"
+    />
+    <meta name="author" content="Guilherme Ranoya" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta name="pinterest" content="nopin" />
+    <meta name="pinterest" content="nohover" />
+    <meta property="og:url" content="https://www.ranoya.com/pt/profile" />
+    <meta property="og:profile" content="profile:Guilherme Ranoya" />
+
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="600" />
+    <meta property="og:site_name" content="ranoya.com" />
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <link href="./tools.css" rel="stylesheet" type="text/css" />
+    <script src="https://datat.vercel.app/basics.js"></script>
+    <script src="../tools_interface.js"></script>
+
+    <title>Pinboard</title>
+    <meta property="og:title" content="Pinboard" />
+    <meta name="description" content="Coleção de imagens de referência" />
+    <meta
+      property="og:description"
+      content="Coleção de imagens de referência"
+    />
+
+    <meta
+      property="og:image"
+      content="https://www.ranoya.com/Assets/coverimages/pinboard600.jpg"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://www.ranoya.com/Assets/coverimages/pinboard600.jpg"
+    />
+    <link
+      rel="image_src"
+      type="image/jpg"
+      href="https://www.ranoya.com/Assets/coverimages/pinboard600.jpg"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://www.ranoya.com/Assets/coverimages/pinboard16.png"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://www.ranoya.com/Assets/coverimages/pinboard57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://www.ranoya.com/Assets/coverimages/pinboard57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="https://www.ranoya.com/Assets/coverimages/pinboard72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="https://www.ranoya.com/Assets/coverimages/pinboard114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="https://www.ranoya.com/Assets/coverimages/pinboard144.png"
+    />
+
+    <!-- FIM DAS META-INFORMAÇÕES -------------------------------- -->
+  </head>
+
+  <body>
+    <!-- CONJUNTO TOTAL (SUPERBODY) -------------- -->
+    <div id="superbody" onscroll="ajustalogos();">
+      <!-- LOGOTIPOS NO TOPO  (SIGNATURE) ----- -->
+      <div class="signature">
+        <div id="sbtitlo" class="subt"></div>
+      </div>
+
+      <!-- MENU HAMBURGER ---------------------------------------- -->
+
+      <a href="javascript:menutoggle();" id="menubutton">
+        <div class="botmenu ponto1"></div>
+        <div class="botmenu ponto2"></div>
+        <div class="botmenu ponto3"></div>
+        <div id="infomenu"></div>
+      </a>
+
+      <!-- CONTEÚDO DA PÁGINA ------------------------------------- -->
+
+      <div id="wrap">
+        <div id="palco">
+          <div id="conteudopalco"></div>
+        </div>
+        <div id="conteudo">
+          <div id="cabecalho"></div>
+
+          <!-- INCLUA O CONTEÚDO DA PÁGINA ----------------------------- -->
+
+          <h1 id="mtitulo"></h1>
+
+          <div id="menublur" onclick="turnonoffmenu();"></div>
+          <div id="portimage" onclick="turnonoffmenu();">
+            <img id="portimagespace" />
+          </div>
+
+          <style>
+            #menublur {
+              display: none;
+              position: fixed;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100dvh;
+              z-index: 9999;
+              background-color: var(--ranoyav2-bg);
+              opacity: 0.8;
+              backdrop-filter: blur(3px);
+            }
+
+            #portimage {
+              display: none;
+              position: fixed;
+              text-align: center;
+              top: 10%;
+
+              height: 80dvh;
+
+              left: 10%;
+              max-width: 80%;
+              width: 100%;
+
+              z-index: 19999;
+            }
+
+            #portimagespace {
+              height: 100%;
+              width: auto;
+              max-width: 100%;
+              box-shadow: 0 0 12px 4px #00000044;
+            }
+
+            #portimagevid {
+              box-shadow: 0 0 12px 4px #00000044;
+              width: 100%;
+              height: 100%;
+            }
+          </style>
+
+          <script>
+            let turnonoffmenu = function () {
+              document.getElementById("menublur").style.display = "none";
+              document.getElementById("portimage").style.display = "none";
+              document.getElementById("portimage").innerHTML = "";
+            };
+
+            let showimag = function (arq) {
+              document.getElementById("menublur").style.display = "block";
+              document.getElementById("portimage").style.display = "block";
+
+              if (arq.match(/youtu/i)) {
+                document.getElementById(
+                  "portimage"
+                ).innerHTML = `<iframe id="portimagevid" frameborder=0 src="${arq}"></iframe>`;
+              } else {
+                document.getElementById(
+                  "portimage"
+                ).innerHTML = `<img id="portimagespace" src="${arq}" />`;
+              }
+            };
+          </script>
+
+          <input type="hidden" id="masterfilter" />
+          <input type="hidden" id="selectfilter" />
+
+          <div class="gridim" id="conteudogrid">
+            <div
+              style="width: 100%; grid-column: inicio/fim; text-align: center"
+            >
+              <span class="loader"></span>
+            </div>
+          </div>
+
+          <script>
+            let defaultmenu = `
+                            <option value="https://docs.google.com/spreadsheets/d/1MUr_AiAYBa184e5ZOUO9jQGD-HvU3rQlOvu0oMAj7fw/edit#gid=1639607603">Inspiração</option>
+
+                            <option value="https://docs.google.com/spreadsheets/d/1MUr_AiAYBa184e5ZOUO9jQGD-HvU3rQlOvu0oMAj7fw/edit#gid=1040411788">
+                                Arte
+                            </option>
+
+                            <option value="https://docs.google.com/spreadsheets/d/1MUr_AiAYBa184e5ZOUO9jQGD-HvU3rQlOvu0oMAj7fw/edit#gid=257476315">
+                                Projetos Exóticos
+                            </option>
+
+                            <option value="https://docs.google.com/spreadsheets/d/1MUr_AiAYBa184e5ZOUO9jQGD-HvU3rQlOvu0oMAj7fw/edit#gid=835245499">
+                                Linguagens
+                            </option>
+
+                            <option value="https://docs.google.com/spreadsheets/d/1MUr_AiAYBa184e5ZOUO9jQGD-HvU3rQlOvu0oMAj7fw/edit#gid=933231796">
+                                Sci-Fi
+                            </option>
+
+                            <option value="https://docs.google.com/spreadsheets/d/1MUr_AiAYBa184e5ZOUO9jQGD-HvU3rQlOvu0oMAj7fw/edit#gid=891014764">
+                                Temáticos
+                            </option>
+
+                            <option value="https://docs.google.com/spreadsheets/d/1MUr_AiAYBa184e5ZOUO9jQGD-HvU3rQlOvu0oMAj7fw/edit#gid=136486909">
+                                Consumismo
+                            </option>`;
+
+            if (
+              $_GET["filtra"] != "" &&
+              $_GET["filtra"] != null &&
+              typeof $_GET["filtra"] != "undefined"
+            ) {
+              document.getElementById("masterfilter").value = decodeURI(
+                $_GET["filtra"]
+              );
+            }
+
+            let omdados = [];
+            let getpinboard = function (arquivojson, el_id) {
+              // Fetch JSON file
+              fetch(GoogleSheetCsvURL(arquivojson))
+                .then((response) => response.text())
+                .then((omdados) => {
+                  let total = omdados.length;
+                  let changecsv = "";
+                  let quantquotes = 0;
+                  for (let r = 0; r < total; r++) {
+                    if (omdados.substring(r, r + 1) == '"') {
+                      quantquotes++;
+                    }
+
+                    if (
+                      omdados.substring(r, r + 1) == "\n" &&
+                      quantquotes % 2 != 0
+                    ) {
+                      changecsv =
+                        omdados.substring(0, r) +
+                        " " +
+                        omdados.substring(r + 1);
+                      omdados = changecsv;
+                    }
+                  }
+
+                  let linhas = omdados.split(/\r?\n|\r|\n/g);
+                  let linhadados = "";
+                  let valorfinal = "";
+                  let temp1 = "";
+                  let temp2 = "";
+
+                  let heads = linhas[0].split(",");
+
+                  let arr = [];
+
+                  for (let i = 1; i < linhas.length; i++) {
+                    arr[i - 1] = {};
+                    linhadados = linhas[i].split(
+                      /[,]{1}(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))/
+                    );
+
+                    for (let k = 0; k < linhadados.length; k++) {
+                      linhadados[k].trim();
+
+                      if (linhadados[k].substring(0, 1) == '"') {
+                        temp1 = linhadados[k].substring(
+                          1,
+                          linhadados[k].length
+                        );
+                      } else {
+                        temp1 = linhadados[k];
+                      }
+
+                      if (
+                        temp1.substring(temp1.length - 2, temp1.length) == '"'
+                      ) {
+                        temp1 = temp1.substring(0, temp1.length - 2);
+                      }
+
+                      if (
+                        temp1.substring(temp1.length - 1, temp1.length) == '"'
+                      ) {
+                        temp2 = temp1.substring(0, temp1.length - 1);
+                      } else {
+                        temp2 = temp1;
+                      }
+
+                      valorfinal = temp2.replace(/""/g, '"');
+
+                      arr[i - 1][heads[k]] = valorfinal;
+                    }
+                  }
+                  //Start Omnifilter Event Listener Function
+                  startpinfilter(arr, el_id, processadados);
+                  startpinfilter(arr, "selectfilter", processadados);
+                });
+            };
+
+            let popfiltro = function (str, nao) {
+              document.getElementById("selectfilter").value = str;
+              document.getElementById("selectfilter").dispatchEvent(
+                new Event("input", {
+                  bubbles: true,
+                })
+              );
+
+              if (typeof nao == "undefined" || nao == null) {
+                menutoggle();
+              }
+            };
+
+            // Omnifilter Event Listener Function
+            let startpinfilter = function (losdados, elemento, funcprocessa) {
+              document
+                .getElementById(elemento)
+                .addEventListener("input", function (evt) {
+                  if (this.value.slice(-1) != "/") {
+                    let estevalor = this.value.replace(/(\/)/g, "");
+                    let newomniarray = select(
+                      losdados,
+                      multipatterncheck_exclude,
+                      "PINBOARDCOMPATIBLE " +
+                        document.getElementById("masterfilter").value +
+                        " " +
+                        document.getElementById("selectfilter").value +
+                        " " +
+                        estevalor
+                    );
+                    funcprocessa(newomniarray);
+                  } else {
+                    document.getElementById("entradapesquisa").value = document
+                      .getElementById("entradapesquisa")
+                      .value.replace(/(\/)/g, "");
+                  }
+                });
+
+              let newomniarray = select(
+                losdados,
+                multipatterncheck_exclude,
+                "PINBOARDCOMPATIBLE " +
+                  document.getElementById("masterfilter").value
+              );
+              funcprocessa(newomniarray);
+            };
+
+            getpinboard(
+              "https://docs.google.com/spreadsheets/d/1MUr_AiAYBa184e5ZOUO9jQGD-HvU3rQlOvu0oMAj7fw/edit#gid=1358034191",
+              "entradapesquisa"
+            );
+
+            let delay = "";
+            let processadados = function (arr) {
+              document.getElementById("conteudogrid").innerHTML = "";
+              clearTimeout(delay);
+
+              let randomiza = false;
+
+              delay = setTimeout(function () {
+                if (
+                  document.getElementById("entradapesquisa").value == "" &&
+                  document.getElementById("selectfilter").value == "" &&
+                  (typeof $_GET["limita"] == "undefined" ||
+                    $_GET["limita"] == null ||
+                    $_GET["limita"] == "")
+                ) {
+                  limite = 30;
+                  randomiza = true;
+                } else {
+                  limite = 0;
+                }
+
+                if (
+                  (document.getElementById("entradapesquisa").value != "" ||
+                    document.getElementById("selectfilter").value != "") &&
+                  (typeof $_GET["limita"] == "undefined" ||
+                    $_GET["limita"] == null ||
+                    $_GET["limita"] == "")
+                ) {
+                  randomiza = false;
+                }
+
+                if (
+                  typeof $_GET["limita"] != "undefined" &&
+                  $_GET["limita"] != null &&
+                  $_GET["limita"] != ""
+                ) {
+                  limite = $_GET["limita"];
+
+                  if (limite != 0) {
+                    randomiza = true;
+                  }
+                }
+
+                let myhtml = "";
+
+                let tamanho = arr.length;
+
+                if (limite != 0 && limite < tamanho) {
+                  tamanho = limite;
+                }
+
+                let ordena = shuffle(arr.length, tamanho);
+
+                if (randomiza) {
+                  for (let i = 0; i < ordena.length; i++) {
+                    myhtml += `<a fundo='${imagefromallsources(
+                      arr[ordena[i]].imagemurl
+                    )}' href='javascript:showimag("${
+                      arr[ordena[i]].imagemurl
+                    }")' class='imagemquadrada'></a>`;
+                  }
+                } else {
+                  for (let i = 0; i < tamanho; i++) {
+                    myhtml += `<a fundo='${imagefromallsources(
+                      arr[i].imagemurl
+                    )}' href='javascript:showimag("${
+                      arr[i].imagemurl
+                    }")' class='imagemquadrada'></a>`;
+                  }
+                }
+
+                document.getElementById("conteudogrid").innerHTML = myhtml;
+
+                jafoi = [];
+                objetos = document.getElementsByClassName("imagemquadrada");
+                carregacoisas();
+              }, 500);
+            };
+
+            let jafoi = [];
+            let objetos = document.getElementsByClassName("imagemquadrada");
+
+            let carregacoisas = function () {
+              for (let i = 0; i < objetos.length; i++) {
+                if (
+                  jafoi[i] != true &&
+                  objetos[i].getBoundingClientRect().top <= window.innerHeight
+                ) {
+                  objetos[i].style.backgroundImage = `url(${objetos[
+                    i
+                  ].getAttribute("fundo")})`;
+                  jafoi[i] = true;
+                }
+              }
+            };
+          </script>
+
+          <!-- FIM DO CONTEÚDO ---------------------------------------- -->
+        </div>
+        <!-- RODAPÉ DA PÁGINA ------------------------------------------- -->
+
+        <div id="rodape">
+          <div class="textos"></div>
+          <div class="redes"></div>
+        </div>
+      </div>
+
+      <div id="altrodape"></div>
+
+      <!-- MENU DE NAVEGAÇÃO ------------------------------------------------------ -->
+
+      <nav>
+        <div id="fixedmenus"></div>
+
+        <div id="blocopesquisa">
+          <b>pesquisa</b>
+          <input id="entradapesquisa" type="text" />
+
+          <b id="mensageminicio" style="display: none"
+            >apenas digite o que você busca</b
+          >
+        </div>
+
+        <select id="qualmenu" onchange="javascript:mudamenu();"></select>
+
+        <div id="resultadosdepesquisa">
+          <a href="javascript:popfiltro('');">Tudo</a>
+        </div>
+
+        <script>
+          let pelaprimeira = true;
+
+          let menu = function (arquivojson) {
+            getcsvdata(GoogleSheetCsvURL(arquivojson), function (dados) {
+              let meuhtml = `<a href='javascript: popfiltro("");'>Tudo</a>`;
+
+              if (
+                $_GET["menu"] != "" &&
+                typeof $_GET["menu"] != "undefined" &&
+                $_GET["menu"] != null
+              ) {
+                meuhtml = "";
+              }
+
+              for (i = 0; i < dados.length; i++) {
+                meuhtml += `<a href='javascript:popfiltro("${dados[i].Filtro}");'>${dados[i].Label}</a>`;
+              }
+
+              document.getElementById("resultadosdepesquisa").innerHTML =
+                meuhtml;
+
+              if (
+                pelaprimeira == false ||
+                ($_GET["menu"] != "" &&
+                  typeof $_GET["menu"] != "undefined" &&
+                  $_GET["menu"] != null)
+              ) {
+                const carregacerto = setTimeout(function () {
+                  popfiltro(dados[0].Filtro, 1);
+                }, 1000);
+              }
+
+              pelaprimeira = false;
+            });
+          };
+
+          let mudamenu = function () {
+            if (
+              $_GET["menu"] != "" &&
+              $_GET["menu"] != null &&
+              typeof $_GET["menu"] != "undefined"
+            ) {
+              document.getElementById("qualmenu").style.display = "none";
+              menu($_GET["menu"]);
+            } else {
+              let qual = document.getElementById("qualmenu").value;
+              menu(qual);
+            }
+          };
+        </script>
+      </nav>
+
+      <script src="../indices.js"></script>
+
+      <script>
+        document.getElementById("superbody").onscroll = function (e) {
+          ajustalogos();
+          carregacoisas();
+        };
+
+        window.addEventListener("resize", carregacoisas);
+      </script>
+
+      <script>
+        /* força tudo */
+
+        $_GET["nomenu"] = true;
+        $_GET["contentonly"] = true;
+        $_GET["blink"] = "";
+        $_GET["menu"] == "";
+
+        if (
+          typeof $_GET["menu"] == "undefined" ||
+          $_GET["menu"] == null ||
+          $_GET["menu"] == ""
+        ) {
+          let inseremenu = setTimeout(function () {
+            document.getElementById("qualmenu").innerHTML = defaultmenu;
+            mudamenu();
+          }, 700);
+        } else {
+          let inseremenu = setTimeout(function () {
+            mudamenu();
+          }, 700);
+        }
+
+        if (typeof $_GET["nomenu"] != "undefined" && $_GET["nomenu"] != "") {
+          document.getElementById("qualmenu").style.display = "none";
+          document.getElementById("resultadosdepesquisa").style.display =
+            "none";
+        }
+
+        if (
+          typeof $_GET["nomenu"] != "undefined" &&
+          $_GET["nomenu"] != null &&
+          $_GET["nomenu"] != ""
+        ) {
+          document.getElementsByClassName("signature")[0].style.display =
+            "none";
+
+          document.getElementsByTagName("nav")[0].style.display = "none";
+
+          document.getElementById("menubutton").style.display = "none";
+          document.getElementById("rodape").style.display = "none";
+          document.getElementById("cabecalho").style.display = "none";
+
+          if (
+            typeof $_GET["blink"] != "undefined" &&
+            $_GET["blink"] != null &&
+            $_GET["blink"] != ""
+          ) {
+            document.getElementById("altrodape").style.display = "block";
+            document.getElementById("altrodape").style.position = "fixed";
+            document.getElementById("altrodape").style.right = 0;
+            document.getElementById("altrodape").style.bottom = 0;
+            document.getElementById("altrodape").style.width =
+              "calc(100% - 60px)";
+            document.getElementById("altrodape").style.backgroundColor =
+              "var(--ranoyav2-bg)";
+            document.getElementById("altrodape").style.color =
+              "var(--ranoyav2-texto)";
+            document.getElementById("altrodape").style.fontSize = "14px";
+            document.getElementById("altrodape").style.lineHeight = "24px";
+            document.getElementById("altrodape").style.padding = "10px";
+            document.getElementById("altrodape").style.paddingRight = "30px";
+            document.getElementById("altrodape").style.paddingLeft = "30px";
+            document.getElementById("altrodape").style.textAlign = "right";
+            document.getElementById("altrodape").style.fontWeight = "bold";
+            document.getElementById("altrodape").style.zIndex = 50000;
+
+            document.getElementById("altrodape").style.height = "34px";
+            document.getElementById("altrodape").innerHTML =
+              `<span style='margin-right: 105px; padding-top: 7px; display: block;'>` +
+              decodeURI($_GET["blink"]) +
+              `</span>`;
+          }
+        }
+
+        let actit = "Pinboard";
+        if (typeof $_GET["titulo"] != "undefined" && $_GET["titulo"] != "") {
+          actit = $_GET["titulo"];
+        }
+
+        actit = "";
+        document.getElementById("mtitulo").innerHTML =
+          "<span class='marker'>" + decodeURI(actit) + "</span>";
+
+        if (
+          typeof $_GET["contentonly"] != "undefined" &&
+          $_GET["contentonly"] != null &&
+          $_GET["contentonly"] != ""
+        ) {
+          document.getElementById("menubutton").style.display = "none";
+        }
+
+        if (
+          typeof $_GET["contentonly"] != "undefined" &&
+          $_GET["contentonly"] != null &&
+          $_GET["contentonly"] != ""
+        ) {
+          document.getElementById("rodape").style.display = "none";
+        }
+
+        let sbtit = "";
+        if (
+          typeof $_GET["subtitulo"] != "undefined" &&
+          $_GET["subtitulo"] != ""
+        ) {
+          sbtit = $_GET["subtitulo"];
+        }
+
+        sbtit = "";
+        document.getElementById("sbtitlo").innerHTML = decodeURI(sbtit);
+
+        let bg = "#FFFFFF";
+        if (
+          typeof $_GET["bg"] != "undefined" &&
+          $_GET["bg"] != null &&
+          $_GET["bg"] != ""
+        ) {
+          bg = "#" + $_GET["bg"];
+        }
+
+        let fg = "#000000";
+        let sh = "#00000055";
+        if (
+          typeof $_GET["fg"] != "undefined" &&
+          $_GET["fg"] != null &&
+          $_GET["fg"] != ""
+        ) {
+          fg = "#" + $_GET["fg"];
+          sh = "#" + $_GET["fg"] + "55";
+        }
+
+        let hl = "#16e3c4";
+
+        if (
+          typeof $_GET["hl"] != "undefined" &&
+          $_GET["hl"] != null &&
+          $_GET["hl"] != ""
+        ) {
+          hl = "#" + $_GET["hl"];
+        }
+
+        document.documentElement.style.setProperty("--ranoyav2-bg", bg);
+        document.documentElement.style.setProperty("--ranoyav2-big", fg);
+        document.documentElement.style.setProperty("--ranoyav2-shadow", sh);
+        document.documentElement.style.setProperty("--ranoyav2-stranger", hl);
+      </script>
+    </div>
+  </body>
+</html>
