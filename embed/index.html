@@ -123,8 +123,6 @@
 
           <!-- INCLUA O CONTEÚDO DA PÁGINA ----------------------------- -->
 
-          <h1 id="mtitulo"></h1>
-
           <div id="menublur" onclick="turnonoffmenu();"></div>
           <div id="portimage" onclick="turnonoffmenu();">
             <img id="portimagespace" />
@@ -643,15 +641,6 @@
               `</span>`;
           }
         }
-
-        let actit = "Pinboard";
-        if (typeof $_GET["titulo"] != "undefined" && $_GET["titulo"] != "") {
-          actit = $_GET["titulo"];
-        }
-
-        actit = "";
-        document.getElementById("mtitulo").innerHTML =
-          "<span class='marker'>" + decodeURI(actit) + "</span>";
 
         if (
           typeof $_GET["contentonly"] != "undefined" &&
