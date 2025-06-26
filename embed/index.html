@@ -435,7 +435,7 @@
 
                 if (randomiza) {
                   for (let i = 0; i < ordena.length; i++) {
-                    if (!arr[ordena[i]].imagemurl.match(/\.mp4$/i)) {
+                    if (!arr[ordena[i]].imagemurl.match(/\.mp4/i)) {
                       myhtml += `<a fundo='${imagefromallsources(
                         arr[ordena[i]].imagemurl
                       )}' href='javascript:showimag("${
@@ -457,7 +457,7 @@
                   }
                 } else {
                   for (let i = 0; i < tamanho; i++) {
-                    if (!arr[ordena[i]].imagemurl.match(/\.mp4$/i)) {
+                    if (!arr[ordena[i]].imagemurl.match(/\.mp4/i)) {
                       myhtml += `<a fundo='${imagefromallsources(
                         arr[i].imagemurl
                       )}' href='javascript:showimag("${
