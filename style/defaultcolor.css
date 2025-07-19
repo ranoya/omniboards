@@ -1,0 +1,60 @@
+:root {
+  --ranoyav2-stranger: #16e3c4;
+  --ranoyav2-strangerpalid: #a8decc;
+  --ranoyav2-strangerdarker: #1ba597;
+  --ranoyav2-greydetails: #cfcfcf;
+  --ranoyav2-bg: #ffffff;
+  --ranoyav2-detalhes: #1da3a7;
+  --ranoyav2-detalhes3: #a4b2b1;
+  --ranoyav2-detalhes2: #86abb7;
+  --ranoyav2-detalhelite: #6bf1dc;
+  --ranoyav2-alfalite: #05e8f522;
+  --ranoyav2-invert: #e38e16;
+  --ranoyav2-texto: #708282;
+  --ranoyav2-big: #e38e16;
+  --palco-c1: #aed5d5;
+  --palco-c2: #e38e16;
+  --ranoyav2-indiceredux: #c7d6ce;
+  --ranoyav2-indicereduxshadow: #c7d6ce99;
+  --logo-rodape: #9bd3d4;
+  --logo-rodape: #ace6eb;
+  --ranoyav2-cardbg: #f9f9f9;
+  --timeline-text-color: #ffa312;
+  --timeline-text-over: #3fe1cb;
+  --base-background: #ffffff;
+  --meta-margins: 30px;
+  --track-height: 35px;
+  --bg-color: #ffffff !important;
+  --line-separator: #e4e4e4 !important;
+  --text-color: #ffa312 !important;
+  --color-link: #b6b8bd !important;
+  --color-hover: #4ac0b3 !important;
+  --input-text: #ffaa46 !important;
+  --scroll-track: #a2aeaf00 !important;
+  --color-shadow: #f6dfff44 !important;
+}
+
+.marker {
+  box-shadow: inset 0px min(-5rem, -100px) #ffaa4688;
+  padding-left: 30px;
+}
+
+#palco {
+  background-image: none;
+  background-color: #fef6e4;
+  box-shadow: 0 6px 4px -10px #00000003;
+}
+
+#infomenu {
+  background-image: url(https://www.ranoya.com/Assets/ranoyav2/infomenublack.svg);
+}
+
+h3 {
+  box-shadow: 0px 18px 18px -20px #00000022;
+}
+
+.logosintese .logoovercolor,
+.logoextenso .logoovercolor {
+  fill: #ccc5b7 !important;
+  transition: fill 0.4s ease-in;
+}
