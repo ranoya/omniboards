@@ -203,7 +203,7 @@
                 document.getElementById(
                   "portimage"
                 ).innerHTML = `<iframe id="portimagevid" frameborder=0 src="${arq}"></iframe>`;
-              } else if (arq.match(/\.mp4/i)) {
+              } else if (arq.match(/\.mp4|\.webm/i)) {
                 document.getElementById(
                   "portimage"
                 ).innerHTML = `<video controls style="height: 80dvh; object-fit: cover;">
@@ -472,7 +472,7 @@
 
                 if (randomiza) {
                   for (let i = 0; i < ordena.length; i++) {
-                    if (!arr[ordena[i]].imagemurl.match(/\.mp4/i)) {
+                    if (!arr[ordena[i]].imagemurl.match(/\.mp4|\.webm/i)) {
                       myhtml += `<a fundo='${imagefromallsources(
                         arr[ordena[i]].imagemurl
                       )}' href='javascript:showimag("${
@@ -494,7 +494,7 @@
                   }
                 } else {
                   for (let i = 0; i < tamanho; i++) {
-                    if (!arr[ordena[i]].imagemurl.match(/\.mp4/i)) {
+                    if (!arr[ordena[i]].imagemurl.match(/\.mp4|\.webm/i)) {
                       myhtml += `<a fundo='${imagefromallsources(
                         arr[i].imagemurl
                       )}' href='javascript:showimag("${
