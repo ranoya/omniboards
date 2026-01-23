@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <!--
 
@@ -101,7 +101,7 @@
 
   <body>
     <!-- CONJUNTO TOTAL (SUPERBODY) -------------- -->
-    <div id="superbody" onscroll="ajustalogos();">
+    <div id="superbody" onscroll="ajustalogos()">
       <!-- LOGOTIPOS NO TOPO  (SIGNATURE) ----- -->
       <div class="signature">
         <div id="sbtitlo" class="subt"></div>
@@ -140,8 +140,8 @@
 
           <h1 id="mtitulo"></h1>
 
-          <div id="menublur" onclick="turnonoffmenu();"></div>
-          <div id="portimage" onclick="turnonoffmenu();">
+          <div id="menublur" onclick="turnonoffmenu()"></div>
+          <div id="portimage" onclick="turnonoffmenu()">
             <img id="portimagespace" />
           </div>
 
@@ -172,10 +172,15 @@
               width: 100%;
 
               z-index: 19999;
+              flex-direction: row;
+              flex-wrap: nowrap;
+              align-content: center;
+              justify-content: center;
+              align-items: center;
             }
 
             #portimagespace {
-              height: 100%;
+              /*height: 100%;*/
               width: auto;
               max-width: 100%;
               box-shadow: 0 0 12px 4px #00000044;
@@ -197,22 +202,19 @@
 
             let showimag = function (arq) {
               document.getElementById("menublur").style.display = "block";
-              document.getElementById("portimage").style.display = "block";
+              document.getElementById("portimage").style.display = "flex";
 
               if (arq.match(/youtu/i)) {
-                document.getElementById(
-                  "portimage"
-                ).innerHTML = `<iframe id="portimagevid" frameborder=0 src="${arq}"></iframe>`;
+                document.getElementById("portimage").innerHTML =
+                  `<iframe id="portimagevid" frameborder=0 src="${arq}"></iframe>`;
               } else if (arq.match(/\.mp4|\.webm/i)) {
-                document.getElementById(
-                  "portimage"
-                ).innerHTML = `<video controls style="height: 80dvh; object-fit: cover;">
+                document.getElementById("portimage").innerHTML =
+                  `<video controls style="height: 80dvh; object-fit: cover;">
                         <source src="${arq}" type="video/mp4">
                       </video>`;
               } else {
-                document.getElementById(
-                  "portimage"
-                ).innerHTML = `<img id="portimagespace" src="${arq}" />`;
+                document.getElementById("portimage").innerHTML =
+                  `<img id="portimagespace" src="${arq}" />`;
               }
             };
           </script>
@@ -282,7 +284,7 @@
               typeof $_GET["filtra"] != "undefined"
             ) {
               document.getElementById("masterfilter").value = decodeURI(
-                $_GET["filtra"]
+                $_GET["filtra"],
               );
             }
 
@@ -325,7 +327,7 @@
                   for (let i = 1; i < linhas.length; i++) {
                     arr[i - 1] = {};
                     linhadados = linhas[i].split(
-                      /[,]{1}(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))/
+                      /[,]{1}(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))/,
                     );
 
                     for (let k = 0; k < linhadados.length; k++) {
@@ -334,7 +336,7 @@
                       if (linhadados[k].substring(0, 1) == '"') {
                         temp1 = linhadados[k].substring(
                           1,
-                          linhadados[k].length
+                          linhadados[k].length,
                         );
                       } else {
                         temp1 = linhadados[k];
@@ -370,7 +372,7 @@
               document.getElementById("selectfilter").dispatchEvent(
                 new Event("input", {
                   bubbles: true,
-                })
+                }),
               );
 
               if (typeof nao == "undefined" || nao == null) {
@@ -393,7 +395,7 @@
                         " " +
                         document.getElementById("selectfilter").value +
                         " " +
-                        estevalor
+                        estevalor,
                     );
                     funcprocessa(newomniarray);
                   } else {
@@ -407,14 +409,14 @@
                 losdados,
                 multipatterncheck_exclude,
                 "PINBOARDCOMPATIBLE " +
-                  document.getElementById("masterfilter").value
+                  document.getElementById("masterfilter").value,
               );
               funcprocessa(newomniarray);
             };
 
             getpinboard(
               "https://docs.google.com/spreadsheets/d/1MUr_AiAYBa184e5ZOUO9jQGD-HvU3rQlOvu0oMAj7fw/edit#gid=1358034191",
-              "entradapesquisa"
+              "entradapesquisa",
             );
 
             let delay = "";
@@ -474,7 +476,7 @@
                   for (let i = 0; i < ordena.length; i++) {
                     if (!arr[ordena[i]].imagemurl.match(/\.mp4|\.webm/i)) {
                       myhtml += `<a fundo='${imagefromallsources(
-                        arr[ordena[i]].imagemurl
+                        arr[ordena[i]].imagemurl,
                       )}' href='javascript:showimag("${
                         arr[ordena[i]].imagemurl
                       }")' class='imagemquadrada'></a>`;
@@ -496,7 +498,7 @@
                   for (let i = 0; i < tamanho; i++) {
                     if (!arr[ordena[i]].imagemurl.match(/\.mp4|\.webm/i)) {
                       myhtml += `<a fundo='${imagefromallsources(
-                        arr[i].imagemurl
+                        arr[i].imagemurl,
                       )}' href='javascript:showimag("${
                         arr[i].imagemurl
                       }")' class='imagemquadrada'></a>`;
@@ -583,7 +585,7 @@
           >
         </div>
 
-        <select id="qualmenu" onchange="javascript:mudamenu();"></select>
+        <select id="qualmenu" onchange="javascript: mudamenu();"></select>
 
         <div id="resultadosdepesquisa">
           <a href="javascript:popfiltro('');">Tudo</a>
