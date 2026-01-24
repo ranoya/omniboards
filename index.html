@@ -718,6 +718,14 @@
               `</span>`;
           }
         }
+
+        if (
+          typeof $_GET["start"] != "undefined" &&
+          $_GET["start"] != null &&
+          $_GET["start"] != ""
+        ) {
+          showimag(decodeURI($_GET["start"]));
+        }
       </script>
     </div>
   </body>
