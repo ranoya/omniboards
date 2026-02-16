@@ -476,8 +476,13 @@
 
                 if (randomiza) {
                   for (let i = 0; i < ordena.length; i++) {
+                    console.log(
+                      i +
+                        ": " +
+                        arr[ordena[i]].imagemurl.match(/\.mp4|\.webm/i),
+                    );
                     if (!arr[ordena[i]].imagemurl.match(/\.mp4|\.webm/i)) {
-                      myhtml += `<a fundo='${imagefromallsources(
+                      myhtml += `<a i=${i} fundo='${imagefromallsources(
                         arr[ordena[i]].imagemurl,
                       )}' href='javascript:showimag("${
                         arr[ordena[i]].imagemurl
@@ -498,8 +503,13 @@
                   }
                 } else {
                   for (let i = 0; i < tamanho; i++) {
+                    console.log(
+                      i +
+                        ": " +
+                        arr[ordena[i]].imagemurl.match(/\.mp4|\.webm/i),
+                    );
                     if (!arr[ordena[i]].imagemurl.match(/\.mp4|\.webm/i)) {
-                      myhtml += `<a fundo='${imagefromallsources(
+                      myhtml += `<a k=${i} fundo='${imagefromallsources(
                         arr[i].imagemurl,
                       )}' href='javascript:showimag("${
                         arr[i].imagemurl
