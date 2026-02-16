@@ -476,18 +476,11 @@
 
                 if (randomiza) {
                   for (let i = 0; i < ordena.length; i++) {
-                    console.log(
-                      i +
-                        ": " +
-                        arr[ordena[i]].imagemurl +
-                        " > " +
-                        arr[ordena[i]].imagemurl.match(/\.mp4|\.webm/i),
-                    );
                     if (
                       arr[ordena[i]].imagemurl.match(/\.mp4|\.webm/i) == null ||
                       arr[ordena[i]].imagemurl.match(/\.mp4|\.webm/i) == false
                     ) {
-                      myhtml += `<a i=${i} fundo='${imagefromallsources(
+                      myhtml += `<a fundo='${imagefromallsources(
                         arr[ordena[i]].imagemurl,
                       )}' href='javascript:showimag("${
                         arr[ordena[i]].imagemurl
@@ -508,18 +501,11 @@
                   }
                 } else {
                   for (let i = 0; i < tamanho; i++) {
-                    console.log(
-                      i +
-                        ": " +
-                        arr[i].imagemurl +
-                        " > " +
-                        arr[i].imagemurl.match(/\.mp4|\.webm/i),
-                    );
                     if (
                       arr[i].imagemurl.match(/\.mp4|\.webm/i) == null ||
                       arr[i].imagemurl.match(/\.mp4|\.webm/i) == false
                     ) {
-                      myhtml += `<a k=${i} fundo='${imagefromallsources(
+                      myhtml += `<a fundo='${imagefromallsources(
                         arr[i].imagemurl,
                       )}' href='javascript:showimag("${
                         arr[i].imagemurl
