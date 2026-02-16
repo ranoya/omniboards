@@ -511,13 +511,13 @@
                     console.log(
                       i +
                         ": " +
-                        arr[ordena[i]].imagemurl +
+                        arr[i].imagemurl +
                         " > " +
-                        arr[ordena[i]].imagemurl.match(/\.mp4|\.webm/i),
+                        arr[i].imagemurl.match(/\.mp4|\.webm/i),
                     );
                     if (
-                      arr[ordena[i]].imagemurl.match(/\.mp4|\.webm/i) == null ||
-                      arr[ordena[i]].imagemurl.match(/\.mp4|\.webm/i) == false
+                      arr[i].imagemurl.match(/\.mp4|\.webm/i) == null ||
+                      arr[i].imagemurl.match(/\.mp4|\.webm/i) == false
                     ) {
                       myhtml += `<a k=${i} fundo='${imagefromallsources(
                         arr[i].imagemurl,
