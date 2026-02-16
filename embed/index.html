@@ -438,7 +438,10 @@
 
                 if (randomiza) {
                   for (let i = 0; i < ordena.length; i++) {
-                    if (!arr[ordena[i]].imagemurl.match(/\.mp4/i)) {
+                    if (
+                      arr[ordena[i]].imagemurl.match(/\.mp4|\.webm/i) == null ||
+                      arr[ordena[i]].imagemurl.match(/\.mp4|\.webm/i) == false
+                    ) {
                       myhtml += `<a fundo='${imagefromallsources(
                         arr[ordena[i]].imagemurl,
                       )}' href='javascript:showimag("${
@@ -460,7 +463,10 @@
                   }
                 } else {
                   for (let i = 0; i < tamanho; i++) {
-                    if (!arr[ordena[i]].imagemurl.match(/\.mp4/i)) {
+                    if (
+                      arr[i].imagemurl.match(/\.mp4|\.webm/i) == null ||
+                      arr[i].imagemurl.match(/\.mp4|\.webm/i) == false
+                    ) {
                       myhtml += `<a fundo='${imagefromallsources(
                         arr[i].imagemurl,
                       )}' href='javascript:showimag("${
@@ -468,13 +474,11 @@
                       }")' class='imagemquadrada'></a>`;
                     } else {
                       myhtml += `<a style="overflow: hidden; padding-top: 0 !important; aspect-ratio: 1/1.05; text-align: center;" href='javascript:showimag("${
-                        arr[ordena[i]].imagemurl
+                        arr[i].imagemurl
                       }")' class='imagemquadrada'>
                         
                         <video controls muted style="height: 100%; object-fit: cover; background-color: var(--ranoyav2-bg);">
-                            <source src="${
-                              arr[ordena[i]].imagemurl
-                            }" type="video/mp4">
+                            <source src="${arr[i].imagemurl}" type="video/mp4">
                         </video>
                         
                         </a>`;
