@@ -578,7 +578,9 @@ html {
   background-color: var(--ranoyav2-bg, #ffffff);
   font-size: 1rem;
   line-height: 1.375rem;
-  transition: transform 0.5s ease-in-out, box-shadow 1s ease-out;
+  transition:
+    transform 0.5s ease-in-out,
+    box-shadow 1s ease-out;
   /* margin-top: 20px; */
 }
 
@@ -859,9 +861,9 @@ nav #resultadosdepesquisa {
   padding: 16px;
   width: 280px;
   text-align: right;
-  margin-top: 20px;
+  margin-top: 50px;
   height: calc(100vh - 490px);
-  overflow: hidden;
+  overflow: auto;
 }
 
 nav #resultadosdepesquisa a {
@@ -1115,7 +1117,10 @@ nav #resultadosdepesquisa a:hover {
 
 #myphoto,
 #logovector {
-  transition: fill 0.4s ease-out, transform 0.4s ease-in, opacity 1s ease-in;
+  transition:
+    fill 0.4s ease-out,
+    transform 0.4s ease-in,
+    opacity 1s ease-in;
 }
 
 .fotopradireita {
