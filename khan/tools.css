@@ -255,7 +255,9 @@ h3 a:hover {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 8px 8px;
+  gap: 50px 8px;
+
+  box-shadow: 0px 2px 13px 1px #0000005e;
 }
 
 @media screen and (max-width: 1200px) {
@@ -1191,7 +1193,8 @@ nav #resultadosdepesquisa a:hover {
   transform: matrix(1, 0, 0, 1, 5, -7);
   -ms-transform: matrix(1, 0, 0, 1, 5, -7);
   -webkit-transform: matrix(1, 0, 0, 1, 5, -7);
-  box-shadow: -10px 10px var(--ranoyav2-shadow, #f6348b55);
+
+  box-shadow: -13px 13px 18px 6px var(--ranoyav2-shadow, #f6348b55);
 }
 
 .imagemaurea {
