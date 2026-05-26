@@ -115,8 +115,10 @@ h1 .marker {
   h1 {
     font-size: 4.725rem;
     line-height: 5.35rem;
-    margin-top: 7rem;
-    margin-bottom: 1rem;
+    background-image: unset;
+    margin-top: 1rem;
+    margin-bottom: 7rem;
+    text-align: right;
   }
 }
 
