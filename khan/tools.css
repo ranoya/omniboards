@@ -256,8 +256,6 @@ h3 a:hover {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 50px 8px;
-
-  box-shadow: 0px 2px 13px 1px #0000005e;
 }
 
 @media screen and (max-width: 1200px) {
@@ -1167,6 +1165,8 @@ nav #resultadosdepesquisa a:hover {
   margin: 4px;
   padding: 0;
   transition: all 0.3s ease-in;
+
+  box-shadow: 0px 2px 13px 1px var(--ranoyav2-shadow, #f6348b55);
 }
 
 .imagemhalf {
