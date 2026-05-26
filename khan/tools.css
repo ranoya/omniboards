@@ -3,6 +3,7 @@
 :root {
   /* --ranoyav2-bg: #F5F1E6; */
   --ranoyav2-bg: #ffffff;
+  --bloco-bg: #ffffff;
   --ranoyav2-detalhes: #61a0be;
   --ranoyav2-detalhes3: #5ea8bf;
   --ranoyav2-detalhes2: #78c3e2;
@@ -1158,6 +1159,7 @@ nav #resultadosdepesquisa a:hover {
 
 .imagemquadrada {
   padding-top: 100%;
+  background-color: var(--bloco-bg, #ffffff);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
