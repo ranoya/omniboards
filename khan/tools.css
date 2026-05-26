@@ -1148,8 +1148,14 @@ nav #resultadosdepesquisa a:hover {
   transform: translate(16px);
 }
 
+@media screen and (min-width: 799px) {
+  .imagemquadrada {
+    padding-top: 100% !important;
+  }
+}
+
 .imagemquadrada {
-  padding-top: 100% !important;
+  padding-top: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
