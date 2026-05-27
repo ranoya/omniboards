@@ -256,7 +256,7 @@ h3 a:hover {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 50px 8px;
+  gap: 0 0;
 }
 
 @media screen and (max-width: 1200px) {
@@ -1164,7 +1164,7 @@ nav #resultadosdepesquisa a:hover {
   background-size: cover;
   background-position: center center;
   border: 1px solid var(--ranoyav2-shadow, #f6348b55);
-  margin: 4px;
+  margin: -14px;
   padding: 0;
   transition: all 0.3s ease-in;
 
@@ -1192,11 +1192,12 @@ nav #resultadosdepesquisa a:hover {
 .imagemquadrada:hover {
   border: 1px solid var(--ranoyav2-stranger, #16e3c4);
   transition: all 0.3s ease-in;
-  transform: matrix(1, 0, 0, 1, 5, -7);
-  -ms-transform: matrix(1, 0, 0, 1, 5, -7);
-  -webkit-transform: matrix(1, 0, 0, 1, 5, -7);
+  transform: matrix(1, 0, 0, 1, 5, -7) scale(1.4) !important;
+  -ms-transform: matrix(1, 0, 0, 1, 5, -7) scale(1.4) !important;
+  -webkit-transform: matrix(1, 0, 0, 1, 5, -7) scale(1.4) !important;
 
   box-shadow: -13px 13px 18px 6px var(--ranoyav2-shadow, #f6348b55);
+  z-index: 10;
 }
 
 .imagemaurea {
