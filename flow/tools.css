@@ -651,7 +651,7 @@ html {
 
   #wrap {
     padding: 64px;
-    width: calc(100vw - 112px);
+    width: calc(100vw - 128px);
     left: 32px;
     padding-top: 0;
   }
