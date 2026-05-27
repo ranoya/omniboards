@@ -444,7 +444,7 @@
 
                 if (randomiza) {
                   for (let i = 0; i < ordena.length; i++) {
-                    let rota = Math.random() * 2 - 1;
+                    let rota = Math.random() * 4 - 2;
 
                     if (
                       arr[ordena[i]].imagemurl.match(/\.mp4|\.webm/i) == null ||
@@ -471,7 +471,7 @@
                   }
                 } else {
                   for (let i = 0; i < tamanho; i++) {
-                    let rota = Math.random() * 2 - 1;
+                    let rota = Math.random() * 4 - 2;
                     if (
                       arr[i].imagemurl.match(/\.mp4|\.webm/i) == null ||
                       arr[i].imagemurl.match(/\.mp4|\.webm/i) == false
