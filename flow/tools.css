@@ -1197,6 +1197,7 @@ nav #resultadosdepesquisa a:hover {
   -webkit-transform: matrix(1, 0, 0, 1, 5, -7) scale(1.4) rotate(0deg) !important;
 
   box-shadow: -13px 13px 18px 6px var(--ranoyav2-shadow, #f6348b55);
+  z-index: 10;
 }
 
 .imagemaurea {
