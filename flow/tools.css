@@ -678,11 +678,10 @@ body {
 }
 
 #superbody {
+  padding: 40px;
   position: fixed;
-  top: 40px;
-  left: 40px;
-  width: calc(100vw - 80px);
-  height: calc(100vh - 80px);
+  width: 100vw;
+  height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
   height: -webkit-fill-available;
