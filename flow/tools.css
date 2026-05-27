@@ -679,8 +679,10 @@ body {
 
 #superbody {
   position: fixed;
-  width: 100vw;
-  height: 100vh;
+  top: 40px;
+  left: 40px;
+  width: calc(100vw - 80px);
+  height: calc(100vh - 80px);
   overflow-x: hidden;
   overflow-y: scroll;
   height: -webkit-fill-available;
