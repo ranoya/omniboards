@@ -588,7 +588,7 @@ html {
 }
 
 #wrap {
-  margin-top: 32px;
+  margin-top: 64px;
   position: absolute;
   z-index: 10;
   top: 0;
@@ -637,9 +637,9 @@ html {
 
 @media screen and (max-width: 799px) {
   #wrap {
-    padding: 16px;
-    width: calc(100vw - 32px);
-    left: max(16px, 50vw - 600px);
+    padding: 32px;
+    width: calc(100vw - 64px);
+    left: max(32px, 50vw - 600px);
     padding-top: 0;
   }
 }
@@ -650,9 +650,9 @@ html {
   }
 
   #wrap {
-    padding: 32px;
-    width: calc(100vw - 48px);
-    left: 16px;
+    padding: 64px;
+    width: calc(100vw - 96px);
+    left: 32px;
     padding-top: 0;
   }
 
@@ -678,7 +678,6 @@ body {
 }
 
 #superbody {
-  padding: 40px;
   position: fixed;
   width: 100vw;
   height: 100vh;
