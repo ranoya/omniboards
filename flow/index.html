@@ -450,13 +450,13 @@
                       arr[ordena[i]].imagemurl.match(/\.mp4|\.webm/i) == null ||
                       arr[ordena[i]].imagemurl.match(/\.mp4|\.webm/i) == false
                     ) {
-                      myhtml += `<a style="transform: rotate(${rota}deg);" fundo='${imagefromallsources(
+                      myhtml += `<a style="z-index: ${20 + i}; transform: rotate(${rota}deg);" fundo='${imagefromallsources(
                         arr[ordena[i]].imagemurl,
                       )}' href='javascript:showimag("${
                         arr[ordena[i]].imagemurl
                       }")' class='imagemquadrada'></a>`;
                     } else {
-                      myhtml += `<a style="transform: rotate(${rota}deg);" style="overflow: hidden; padding-top: 0 !important; aspect-ratio: 1/1.05; text-align: center;" href='javascript:showimag("${
+                      myhtml += `<a style="z-index: ${20 + i}; transform: rotate(${rota}deg);" style="overflow: hidden; padding-top: 0 !important; aspect-ratio: 1/1.05; text-align: center;" href='javascript:showimag("${
                         arr[ordena[i]].imagemurl
                       }")' class='imagemquadrada'>
                         
@@ -476,13 +476,13 @@
                       arr[i].imagemurl.match(/\.mp4|\.webm/i) == null ||
                       arr[i].imagemurl.match(/\.mp4|\.webm/i) == false
                     ) {
-                      myhtml += `<a style="transform: rotate(${rota}deg);" fundo='${imagefromallsources(
+                      myhtml += `<a style="z-index: ${20 + i}; transform: rotate(${rota}deg);" fundo='${imagefromallsources(
                         arr[i].imagemurl,
                       )}' href='javascript:showimag("${
                         arr[i].imagemurl
                       }")' class='imagemquadrada'></a>`;
                     } else {
-                      myhtml += `<a style="transform: rotate(${rota}deg); overflow: hidden; padding-top: 0 !important; aspect-ratio: 1/1.05; text-align: center;" href='javascript:showimag("${
+                      myhtml += `<a style="z-index: ${20 + i}; transform: rotate(${rota}deg); overflow: hidden; padding-top: 0 !important; aspect-ratio: 1/1.05; text-align: center;" href='javascript:showimag("${
                         arr[i].imagemurl
                       }")' class='imagemquadrada'>
                         

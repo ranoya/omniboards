@@ -1193,12 +1193,12 @@ nav #resultadosdepesquisa a:hover {
 .imagemquadrada:hover {
   border: 1px solid var(--ranoyav2-stranger, #16e3c4);
   transition: all 0.3s ease-in;
-  transform: matrix(1, 0, 0, 1, 5, -7) scale(1.4) !important;
-  -ms-transform: matrix(1, 0, 0, 1, 5, -7) scale(1.4) !important;
-  -webkit-transform: matrix(1, 0, 0, 1, 5, -7) scale(1.4) !important;
+  transform: matrix(1, 0, 0, 1, 5, -7) scale(1.2) !important;
+  -ms-transform: matrix(1, 0, 0, 1, 5, -7) scale(1.2) !important;
+  -webkit-transform: matrix(1, 0, 0, 1, 5, -7) scale(1.2) !important;
 
   box-shadow: -13px 13px 18px 6px var(--ranoyav2-shadow, #f6348b55);
-  z-index: 10;
+  z-index: 10000;
 }
 
 .imagemaurea {
