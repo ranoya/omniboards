@@ -1169,6 +1169,7 @@ nav #resultadosdepesquisa a:hover {
   transition: all 0.3s ease-in;
 
   box-shadow: 0px 2px 13px 1px var(--ranoyav2-shadow, #f6348b55);
+  transform: scale(0.6) !important;
 }
 
 .imagemhalf {
