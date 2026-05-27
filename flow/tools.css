@@ -1169,7 +1169,6 @@ nav #resultadosdepesquisa a:hover {
   transition: all 0.3s ease-in;
 
   box-shadow: 0px 2px 13px 1px var(--ranoyav2-shadow, #f6348b55);
-  opacity: 0.6;
 }
 
 .imagemhalf {
@@ -1199,7 +1198,6 @@ nav #resultadosdepesquisa a:hover {
 
   box-shadow: -13px 13px 18px 6px var(--ranoyav2-shadow, #f6348b55);
   z-index: 10;
-  opacity: 1;
 }
 
 .imagemaurea {
