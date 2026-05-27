@@ -1193,8 +1193,8 @@ nav #resultadosdepesquisa a:hover {
   border: 1px solid var(--ranoyav2-stranger, #16e3c4);
   transition: all 0.3s ease-in;
   transform: matrix(1, 0, 0, 1, 5, -7);
-  -ms-transform: matrix(1, 0, 0, 1, 5, -7) scale(1.4);
-  -webkit-transform: matrix(1, 0, 0, 1, 5, -7) scale(1.4);
+  -ms-transform: matrix(1, 0, 0, 1, 5, -7) scale(1.4) rotate(0deg);
+  -webkit-transform: matrix(1, 0, 0, 1, 5, -7) scale(1.4) rotate(0deg);
 
   box-shadow: -13px 13px 18px 6px var(--ranoyav2-shadow, #f6348b55);
 }
