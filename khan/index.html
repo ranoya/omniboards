@@ -1,4 +1,3 @@
-
 <!doctype html>
 
 <!--
@@ -9,6 +8,7 @@
     bg= -> cor de fundo (hexadecimal)
     fg= -> cor de frente (hexadecimal)
     hl= -> cor de destaque (hexadecimal)
+    invert= -> inverte a ordem dos itens (true/false)
 
 
 -->
@@ -264,7 +264,18 @@
               // Fetch JSON file
               fetch(GoogleSheetCsvURL(arquivojson))
                 .then((response) => response.text())
-                .then((omdados) => {
+                .then((origdados) => {
+                  let omdados = [];
+                  if (
+                    typeof $_GET["invert"] != "undefined" &&
+                    $_GET["invert"] != "" &&
+                    $_GET["invert"] != null
+                  ) {
+                    omdados = origdados.reverse();
+                  } else {
+                    omdados = origdados;
+                  }
+
                   let total = omdados.length;
                   let changecsv = "";
                   let quantquotes = 0;
