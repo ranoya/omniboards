@@ -264,18 +264,7 @@
               // Fetch JSON file
               fetch(GoogleSheetCsvURL(arquivojson))
                 .then((response) => response.text())
-                .then((origdados) => {
-                  let omdados = [];
-                  if (
-                    typeof $_GET["invert"] != "undefined" &&
-                    $_GET["invert"] != "" &&
-                    $_GET["invert"] != null
-                  ) {
-                    omdados = origdados.reverse();
-                  } else {
-                    omdados = origdados;
-                  }
-
+                .then((omdados) => {
                   let total = omdados.length;
                   let changecsv = "";
                   let quantquotes = 0;
@@ -344,8 +333,20 @@
                     }
                   }
                   //Start Omnifilter Event Listener Function
-                  startpinfilter(arr, el_id, processadados);
-                  startpinfilter(arr, "selectfilter", processadados);
+
+                  let arrfinal = [];
+                  if (
+                    typeof $_GET["invert"] != "undefined" &&
+                    $_GET["invert"] != "" &&
+                    $_GET["invert"] != null
+                  ) {
+                    arrfinal = arr.reverse();
+                  } else {
+                    arrfinal = arr;
+                  }
+
+                  startpinfilter(arrfinal, el_id, processadados);
+                  startpinfilter(arrfinal, "selectfilter", processadados);
                 });
             };
 
